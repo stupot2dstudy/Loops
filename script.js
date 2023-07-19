@@ -1,5 +1,5 @@
 "use strict";
-//Const to find the prime numbers
+//Const to find the prime numberbers
 
 const people = {
   Maria: 20,
@@ -28,3 +28,35 @@ let findBirthdayPrime = Object.keys(people).filter((name) =>
 
 alert("People with age as prime number:");
 alert(findBirthdayPrime); // Output: ["Ana", "Irene"]
+
+// const to find prime number between - - 100
+
+function thePrime(number) {
+  if (number <= 1) return false;
+  if (number <= 3) return true;
+
+  if (number % 2 === 0 || number % 3 === 0) return false;
+
+  let i = 5;
+  while (i * i <= number) {
+    if (number % i === 0 || number % (i + 2) === 0) return false;
+    i += 6;
+  }
+
+  return true;
+}
+
+function findPrimesInRange(start, end) {
+  const primes = [];
+  for (let i = start; i <= end; i++) {
+    if (thePrime(i)) {
+      primes.push(i);
+    }
+  }
+  return primes;
+}
+
+const startRange = 0;
+const endRange = 100;
+const primeNumbnumberbers = findPrimesInRange(startRange, endRange);
+console.log(primeNumbnumberbers);
